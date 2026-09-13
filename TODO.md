@@ -11,13 +11,13 @@
 ## Testing & CI
 - [x] payment-service, inventory-service, review-service, order-service, notification-service, shared/python-common-lib all build and pass their existing test suites locally after the above changes
 - [x] Run the full test suite for the remaining services (user, product, cart, analytics, behavior-tracking, recommendation, search, seller) end-to-end
-- [ ] Verify ci.yml actually runs and passes for all 14 services (Python + Java) — needs a CI run, can't be verified locally
+- [ ] Verify ci.yml actually runs and passes for all 13 services + shared lib (Python + Java) — needs a CI run, can't be verified locally
 - [x] Add test coverage reporting/thresholds to CI
 
 ## Infrastructure
 - [ ] Verify Terraform modules (eks, rds, elasticache, msk) apply cleanly in a real AWS account — requires live AWS credentials, not doable locally
 - [ ] Verify Istio mTLS and routing rules against the live service mesh — requires a running cluster
-- [ ] Review Kubernetes secrets management (currently in infrastructure/kubernetes/base/secret.yaml) — move to a proper secret manager (e.g. AWS Secrets Manager / Sealed Secrets) before prod use
+- [x] Review Kubernetes secrets management — migrated to Sealed Secrets (infrastructure/kubernetes/base/sealed-secret.yaml replaces plaintext secret.yaml)
 
 ## Documentation
 - [x] Add a project ROADMAP or milestones doc
